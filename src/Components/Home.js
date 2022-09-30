@@ -29,6 +29,7 @@ export default function Home({database}) {
    const [passwordsArray, setPasswordsArrray]=useState([]);
    const [PasswordObject , setPasswordObject] = useState({});
    const [oldPassword , setOldPassword] = useState([]);
+   
     const getPasswords = () =>{
         onSnapshot(emailQuery ,(response) =>{
             setPasswordsArrray(response.docs.map((item) =>{
@@ -73,12 +74,13 @@ export default function Home({database}) {
     }
 
 useEffect(()=>{
-    onAuthStateChanged(auth,(response) => {
+    onAuthStateChanged(auth, (response) => {
         if(response){
-            getPasswords();
+            getPasswords()
         }
         else{
-            navigate('/')
+            // navigate('/')
+            navigate('/login')
         }
     })
     
