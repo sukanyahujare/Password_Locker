@@ -47,7 +47,7 @@ export default function Register({database}) {
         .catch(err =>{
             setTimeout(() =>{
                 navigate('/')
-            },2000)
+            },1000)
             toast.error("Alleready Exister...Go Login")
             
         })
